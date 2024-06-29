@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Quotations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff010f;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="file"] {
+            display: none;
+            /* Hide the default file input */
+        }
+
+        .browse-btn {
+            display: inline-block;
+            background-color: purple;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .browse-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload Files here</h1>
+        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+            <label for="file-input" class="browse-btn">Browse</label>
+            <input type="file" id="file-input" name="files" accept=".htm, .html, .txt" multiple required
+                onchange="document.getElementById('upload-form').submit()">
+        </form>
+    </div>
+</body>
+
+</html>
